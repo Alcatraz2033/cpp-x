@@ -23,7 +23,7 @@ ${GREEN}          By:Alcatraz2033
 	EOF
 }
 
-installer_dependenses(){
+installer_dependenses (){
 	which g++ &>/dev/null
 	if [ $? -ne 0 ];then
 		banner
