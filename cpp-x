@@ -1,0 +1,7 @@
+#!/bin/bash
+RED="$(printf '\033[31m')" CYAN="$(printf '\033[36m')" END="$(printf '\033[0m\e[0m')"
+if [ ! $1 ];then
+	echo "[${RED}!${END}]${RED} No ha ingresado el archivo a compilar${END}"
+	exit 1
+fi 
+g++ -o $(echo $1 | awk -F'.' '{print $1}') $1 && ./$(echo $1 | awk -F'.' '{print $1}') && rm $(echo $1 | awk -F'.' '{print $1}')
